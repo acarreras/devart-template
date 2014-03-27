@@ -2,8 +2,8 @@
 Kit de Libertad de Expresión / Freedom of Speech Kit
 
 ## Authors
-- Anna Carreras www.github.com/acarreras www.etcinventions.com www.annacarreras.com
-- Chema Blanco www.github.com/chemabc www.etcinventions.com www.jmblancocalvo.com/
+- Anna Carreras www.github.com/acarreras, www.etcinventions.com, www.annacarreras.com
+- Chema Blanco www.github.com/chemabc, www.etcinventions.com, www.jmblancocalvo.com
 - Maria Solé Bravo www.mariasolebravo.com
 
 ## Description
