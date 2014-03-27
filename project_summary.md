@@ -2,9 +2,9 @@
 Kit de Libertad de Expresión / Freedom of Speech Kit
 
 ## Authors
-- Anna Carreras www.github.com/acarreras
-- Chema Blanco www.github.com/chemabc
-- Maria Solé Bravo www.mariasolebravo.com  (por fin tengo web!!)
+- Anna Carreras www.github.com/acarreras www.etcinventions.com www.annacarreras.com
+- Chema Blanco www.github.com/chemabc www.etcinventions.com www.jmblancocalvo.com/
+- Maria Solé Bravo www.mariasolebravo.com
 
 ## Description
 The "Kit de Libertad de Expresión  / Freedom of Speech Kit" is  an interactive and portable banner where people can send messages in real time to express their claims during a social demonstration.
