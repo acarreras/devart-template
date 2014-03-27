@@ -1,5 +1,5 @@
 # Characters
-
+## Materials & Lilypad
 The first step was to develop a low cost characters display. We did some materials research including textiles, conductive ink, conductive sewing materials, non-conducting glue and textiles, etc.
 
 A small piece of code was developed to test the 1 character LED display using Arduino Lilypad.
