@@ -4,8 +4,7 @@
             "twitter"
         ],
         "platforms": [
-            "android",
-			"web"
+            "android"
         ],
         "toolkits": [
             "arduino"
@@ -13,12 +12,12 @@
     },
     "themes": [
         "freedom of speech",
-		"diy",
-		"diwo",
-		"textiles",
-		"wearable",
-		"electronics",
-		"code",
-		"collective expression"
+        "diy",
+        "diwo",
+        "textiles",
+        "wearable",
+        "electronics",
+        "code",
+        "collective expression"
     ]
 }
