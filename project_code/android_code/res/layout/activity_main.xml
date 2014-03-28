@@ -1,0 +1,79 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:src="@drawable/freedom_banner2" />
+
+    <TextView
+        android:id="@+id/textview0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000010"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000010"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/mentionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/freedomp"
+        android:enabled="false"
+        android:onClick="postMention"
+        android:text="Mention to Poster"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+    <EditText
+        android:id="@+id/tweetEditor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLength="140"
+        android:padding="10dp"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/postButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/freedomp"
+        android:enabled="false"
+        android:onClick="posting"
+        android:text="Tweet"
+        android:textAppearance="@android:style/TextAppearance.Small" />
+
+</TableLayout>
