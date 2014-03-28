@@ -1,6 +1,4 @@
-# Project Title
-Kit de Libertad de Expresión / Freedom of Speech Kit
-
+# Kit de Libertad de Expresión / Freedom of Speech Kit
 ## Authors
 - Anna Carreras www.github.com/acarreras
 - Chema Blanco www.github.com/chemabc
