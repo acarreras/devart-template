@@ -10,4 +10,4 @@ Further steps include creating an appropriate web service where anyone who build
 ![KLE pillow helio](../project_images/secondproto/KLE_pillow_helio.jpg "KLE pillow helio")
 
 ## Workshop & Expo
-A 5 days workshop could let participants to build different "Kits de Libertad de Expresión / Freedom of Speech Kits" using and exploring different materials. The result of the worksop can be then showcased in an art gallery where visitors and remote users can send messages to the different KLE's banners.
+A 5 days workshop could let participants to build different "Kits de Libertad de Expresión / Freedom of Speech Kits" using and exploring different materials. The result of the workshop can be then showcased in an art gallery where visitors and remote users can send in real time messages to the different KLE's banners.
