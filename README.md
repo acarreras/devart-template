@@ -1,2 +1,2 @@
 # DevArt Template
-This repository is where the "Kit de Libertad de Expresión" project is populated for [DevArt](https://devart.withgoogle.com. The page on DevArt changes every time you make changes to your code and push this repository to GitHub.
+This repository is where the "Kit de Libertad de Expresión" project is populated for DevArt https://devart.withgoogle.com. The page on DevArt changes every time you make changes to your code and push this repository to GitHub.
