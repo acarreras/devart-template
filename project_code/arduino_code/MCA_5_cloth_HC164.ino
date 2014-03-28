@@ -47,11 +47,24 @@ void setup(){
                       LOOP
 ****************************************************************************************************/
 
-void loop(){
-
-    writeMatrixFilaAFila();
-
+void loopByLetra(){
+  writeMatrixFilaAFila();
 }
+
+void loop(){
+  //readBluetooth();
+  //checkButton();
+  //writeMatrix();
+    writeMatrixFilaAFila();
+//  i_steps_counter++;
+//
+//  if(i_steps_counter >=i_number_of_steps_for_desplazamiento){
+//    i_num_desplazamientos++;
+//    i_steps_counter = 0;
+//    if(i_num_desplazamientos > i_num_max_pixels) i_num_desplazamientos = i_num_pixels_per_matrix+i_pixels_between_chars;
+//  }
+}
+
 
 
 

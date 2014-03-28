@@ -5,7 +5,7 @@
 /******************************************************************************
         CONSTANTES TO CONFIGURE THE DEVICE TO WHICH ARDUINO IS CONNECTED
 ********************************************************************************/
-const int iTimePerLetra = 70;
+
 const boolean b_mode_cloth = true; //If true Anode(+) goes to Rows
 const bool b_debug = false; //To print stuff (This uses serial port, so be careful);
 const bool b_using_bluetooth = false;
@@ -22,15 +22,7 @@ int pinBoton = 9;
 /******************************************************************************
         WORDS INPUT
 ********************************************************************************/
-//' ', 'A', 'N', 'D', ' ', 'F', 'E', 'S', 'T', 'I', 'V', 'A', 'L',' ',
-//' ','E', 'X', 'P', 'R', 'E', 'S', 'S',  ' ', 'Y', 'O', 'U', 'R', 'S' , 'E', 'L', 'F',' ',
-//' ','T', 'H', 'E', ' ', 'F' , 'R', 'E', 'E', 'D', 'O', 'M', ' ', 'O', 'F' , ' ', 'S', 'P', 'E', 'E', 'C', 'H', ' ', 'P' , 'R', 'O', 'J', 'E', 'C', 'T',' ',
-//' ','F', 'R', 'E', 'E', 'D', 'O', 'M', ' ' , 'O', 'F', ' ', 'S', 'P', 'E', 'E', 'C', 'H',' ', 'K', 'I', 'T', ' ',
-//' ', 'C', 'H', 'E', 'M' , 'A', ' ', 'B', 'L', 'A', 'N', 'C', 'O', ',' , 'M', 'A', 'R', 'I', 'A', ' ', 'S', 'O', 'L' , 'E', ',', 'A', 'N', 'N', 'A', ' ', 'C', 'A' , 'R', 'R', 'E', 'R', 'A', 'S', ' ', 'E', 'T' , 'C', ' ', 'I', 'N', 'V', 'E', 'N', 'T', 'I' , 'O', 'N', 'S', ' ',
-//char original_characters[] = { ' ', 'A', 'N', 'D', ' ', 'F', 'E', 'S', 'T', 'I', 'V', 'A', 'L',' ','E', 'X', 'P', 'R', 'E', 'S', 'S',  ' ', 'Y', 'O', 'U', 'R', 'S' , 'E', 'L', 'F',' ', ' ','T', 'H', 'E', ' ', 'F' , 'R', 'E', 'E', 'D', 'O', 'M', ' ', 'O', 'F' , ' ', 'S', 'P', 'E', 'E', 'C', 'H', ' ', 'P' , 'R', 'O', 'J', 'E', 'C', 'T',' '};
-//char original_characters[] = {'H', 'o', 'l', 'a'};
-//char original_characters[] = {'T', 'E', 'S','T'};
-char original_characters[] = { 'A', 'b','a','n','d','o','n',' ','N','o','r','m','a','l',' ','D','e','v','i','c','e','s',' ','U','S','E',' ','U','S','!'};
+char original_characters[] = {'1', '2', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'A', 'O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A','O', 'L', 'A'};
 const int i_size_array_characters = sizeof(original_characters) / sizeof(char);
 const int i_num_pixels_per_matrix = 5;
 const int i_pixels_between_chars = 1;
@@ -150,8 +142,8 @@ byte led_font_list[97][7] = {
    {0x00, 0x00, 0x11, 0x11, 0x15, 0x15, 0x0a},   // 0x77, w
    {0x00, 0x00, 0x11, 0x0a, 0x04, 0x0a, 0x11},   // 0x78, x
    {0x00, 0x11, 0x11, 0x0f, 0x01, 0x11, 0x0e},   // 0x79, y
-   //{0x01, 0x01, 0x01, 0x06, 0x06, 0x18, 0x18}, // 0x7a, z  <- EXTRAÃ‘A COSA APAGADA Y ENCENDIDA POR PARTES
-   //{0x18, 0x18, 0x06, 0x06, 0x01, 0x01, 0x01}, // 0x7a, z  <- EXTRAÃ‘A COSA APAGADA Y ENCENDIDA POR PARTES
+   //{0x01, 0x01, 0x01, 0x06, 0x06, 0x18, 0x18}, // 0x7a, z  <- EXTRAÑA COSA APAGADA Y ENCENDIDA POR PARTES
+   //{0x18, 0x18, 0x06, 0x06, 0x01, 0x01, 0x01}, // 0x7a, z  <- EXTRAÑA COSA APAGADA Y ENCENDIDA POR PARTES
    //{0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f}, // 0x7a, z  <- TODO LLENO
    {0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01}, // 0x7a, z  <- TODO LLENO
    //{0x00, 0x00, 0x1f, 0x02, 0x04, 0x08, 0x1f},   // 0x7a, z  (original)

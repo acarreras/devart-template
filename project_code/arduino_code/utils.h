@@ -82,6 +82,14 @@ void writeBitDataAndWait(int data){
   digitalWrite(pinReloj, 1);
   delayMicroseconds(1);
 
+//  if(b_mode_cloth)digitalWrite(pinDatos, 1);
+//  else digitalWrite(pinDatos, 0);
+//
+//  digitalWrite(pinReloj, 0);
+
+//  //remove
+//  if(b_mode_cloth)digitalWrite(pinDatos, 0);
+//  else digitalWrite(pinDatos, 1);
 }
 
 // 1 frase = n X m letras
@@ -108,7 +116,20 @@ void writeOneByte(byte b){
 
   }
 }
-
+/**
+    Este método va letra a letra, y por cada una la descompone en bytes
+    y escribe las 7 filas. Después mete un nuevo caracter.
+*/
+void writeRowByte(int fila, byte b){
+    if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], HIGH); //ENCIENDE FILA 1
+    else digitalWrite(iArray_pins_filas[fila], LOW); //ENCIENDE FILA 1
+    for(int i=0; i<30; i++){
+        shiftOut(pinDatos, pinReloj, MSBFIRST, b);
+        delayMicroseconds(1);
+    }
+    if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], HIGH); //ENCIENDE FILA 1
+    else digitalWrite(iArray_pins_filas[fila], LOW); //ENCIENDE FILA 1
+}
 void writeByte2(byte b){
     shiftOut(pinDatos, pinReloj, MSBFIRST, b);
     delayMicroseconds(1);
@@ -116,24 +137,19 @@ void writeByte2(byte b){
 
 
 void writeMatrixFilaAFila(){
-    int iletra_debug = 0; //El mayor numero siempre es la de la derecha. 0 serÃ­a la de la izquierda.
-    int numPancartas = 4;
+    int numPancartas = 6;
     //Recorro character a character
-    for (int numChar=0; numChar<i_size_array_characters-1; numChar++) {  //Lo Â¨Â²ltimo que se escribe irÂ¨Â¢ en la columna de la derecha
-        for(int tiempoPorLetra=0; tiempoPorLetra<iTimePerLetra; tiempoPorLetra++){
+    for (int numChar=0; numChar<i_size_array_characters-1; numChar++) {  //Lo ¨²ltimo que se escribe ir¨¢ en la columna de la derecha
+        for(int tiempoPorLetra=0; tiempoPorLetra<100; tiempoPorLetra++){
            for(int fila = 0; fila < 7; fila ++)  {
-                for(int pancarta=0; pancarta < numPancartas; pancarta++){
-                    byte b = ptr_by_frase[numChar+pancarta][fila];
-                    if(b_debug){
-                        if(pancarta==iletra_debug){
-                            writeOneByte(31);
-                        }else{
-                            writeOneByte(0);
-                        }
-                    }
-                    else{
-                        writeOneByte(b);
-                    }
+                for(int i=0; i < numPancartas; i++){
+                    byte b = ptr_by_frase[numChar+i][fila];
+                    writeOneByte(b);
+//                    if(b_mode_cloth){
+//                        writeOneByte(b);
+//                    }else{
+//                        writeByte2(b);
+//                    }
                 }
                 if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], HIGH); //ENCIENDE FILA 1
                 else digitalWrite(iArray_pins_filas[fila], LOW); //ENCIENDE FILA 1
@@ -145,6 +161,62 @@ void writeMatrixFilaAFila(){
             }
         }
 //delay(idelayBetweenChars);
+}
+void writeMatrixLetraALetraProgresivo(){
+    int ciclos = 10;
+    int idelay = 1;
+    int idelayBetweenChars = 100;
+    int tMax = 35;
+
+    //Recorro character a character
+//    for (int numChar=0; numChar<i_size_array_characters; numChar++) {  //Lo ¨²ltimo que se escribe ir¨¢ en la columna de la derecha
+        //Para cada caracter creo un array de 7 bytes (uno por fila);
+        for(int t=0; t<tMax; t++){
+            for(int fila = 0; fila < 7; fila ++)  {
+                //byte b = ptr_by_frase[numChar][fila];
+                //Escribo el byte en cada fila
+                if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], HIGH); //ENCIENDE FILA 1
+                else digitalWrite(iArray_pins_filas[fila], LOW); //ENCIENDE FILA 1
+                    for(int i=0; i<ciclos; i++)
+                        writeOneByte(1);
+                    delay(idelay);
+
+                if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], LOW); //APAGA
+                else digitalWrite(iArray_pins_filas[fila], HIGH); //APAGA
+            }
+            delay(1000);
+        }
+            //delay(idelayBetweenChars);
+//    }
+}
+/**
+    Este método va fila por fila y en cada una mete todos los bytes correspondientes
+    a una fila completa (es decir, si tenemos 10 letras, pues 10 bytes a la vez para una fila.
+*/
+
+void writeMatrix(){
+  for(int fila = 0; fila < 7; fila ++)  {
+     /* Carga los bytes apropiados con espacios a mandar teniendo en cuenta el numero de caracteres */
+    for (int numChar=0; numChar<i_size_array_characters; numChar++) {  //Lo ¨²ltimo que se escribe ir¨¢ en la columna de la derecha!
+      ptr_by_byte_to_send_per_row[numChar] = (0 << i_num_pixels_per_matrix) | ptr_by_frase[numChar][fila];
+      //ptr_by_byte_to_send_per_row[numChar] = ptr_by_frase[numChar][fila];
+    }
+    /* Maneja encendido y apagado de las filas */
+    if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], HIGH); //ENCIENDE FILA 1
+    else digitalWrite(iArray_pins_filas[fila], LOW); //ENCIENDE FILA 1
+
+      writeOneRow(ptr_by_byte_to_send_per_row);
+      delay(3); //4
+
+    if(b_mode_cloth)digitalWrite(iArray_pins_filas[fila], LOW); //APAGA
+    else digitalWrite(iArray_pins_filas[fila], HIGH); //APAGA
+
+  }
+
+  if(b_debug){
+    Serial.print("numDesp: ");
+    Serial.println(i_num_desplazamientos, DEC);
+  }
 }
 
 
